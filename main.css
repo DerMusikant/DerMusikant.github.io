@@ -543,8 +543,8 @@ video {
   bottom: 2rem;
 }
 
-.col-span-4 {
-  grid-column: span 4 / span 4;
+.col-span-2 {
+  grid-column: span 2 / span 2;
 }
 
 .row-span-2 {
@@ -553,6 +553,10 @@ video {
 
 .row-span-3 {
   grid-row: span 3 / span 3;
+}
+
+.row-start-2 {
+  grid-row-start: 2;
 }
 
 .m-2 {
@@ -569,6 +573,11 @@ video {
   margin-right: 0.75rem;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -577,6 +586,11 @@ video {
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .block {
@@ -611,6 +625,10 @@ video {
   height: 3.5rem;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .h-4\/5 {
   height: 80%;
 }
@@ -633,6 +651,10 @@ video {
 
 .w-3\/5 {
   width: 60%;
+}
+
+.w-4\/5 {
+  width: 80%;
 }
 
 .w-full {
@@ -722,12 +744,8 @@ video {
   }
 }
 
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.grid-rows-4 {
-  grid-template-rows: repeat(4, minmax(0, 1fr));
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-rows-6 {
@@ -768,6 +786,10 @@ video {
 
 .overflow-x-hidden {
   overflow-x: hidden;
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem;
 }
 
 .rounded-full {
@@ -880,6 +902,10 @@ video {
 
 .font-bold {
   font-weight: 700;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 *, ::before, ::after {
@@ -1065,6 +1091,12 @@ html{
   max-width: 480px;
 }
 
+.card{
+  box-shadow: 5px 10px 20px -10px var(--purple-main);
+  border-radius: 1rem;
+  background-image: linear-gradient(to bottom, var(--red-main), var(--platinum));
+}
+
 /* ------------------------- HOME STYLES END ------------------ */
 
 /* ----------------------LANDSCAPE MEDIA QUERY START -------------------- */
@@ -1139,8 +1171,8 @@ html{
 /* -------------------PC MEDIA QUERY END------------------------- */
 
 @media (min-width: 475px) {
-  .xs\:col-span-2 {
-    grid-column: span 2 / span 2;
+  .xs\:col-span-1 {
+    grid-column: span 1 / span 1;
   }
 
   .xs\:row-span-2 {
@@ -1204,12 +1236,28 @@ html{
 }
 
 @media (min-width: 1024px) {
+  .lg\:col-auto {
+    grid-column: auto;
+  }
+
   .lg\:col-span-1 {
     grid-column: span 1 / span 1;
   }
 
   .lg\:col-span-2 {
     grid-column: span 2 / span 2;
+  }
+
+  .lg\:row-span-2 {
+    grid-row: span 2 / span 2;
+  }
+
+  .lg\:row-span-3 {
+    grid-row: span 3 / span 3;
+  }
+
+  .lg\:row-span-5 {
+    grid-row: span 5 / span 5;
   }
 
   .lg\:flex {
@@ -1238,6 +1286,18 @@ html{
 
   .lg\:justify-end {
     justify-content: flex-end;
+  }
+
+  .lg\:self-start {
+    align-self: flex-start;
+  }
+
+  .lg\:self-end {
+    align-self: flex-end;
+  }
+
+  .lg\:text-left {
+    text-align: left;
   }
 
   .lg\:shadow-none {
