@@ -543,10 +543,6 @@ video {
   bottom: 2rem;
 }
 
-.col-span-2 {
-  grid-column: span 2 / span 2;
-}
-
 .col-span-4 {
   grid-column: span 4 / span 4;
 }
@@ -557,10 +553,6 @@ video {
 
 .row-span-3 {
   grid-row: span 3 / span 3;
-}
-
-.row-start-1 {
-  grid-row-start: 1;
 }
 
 .m-2 {
@@ -575,6 +567,11 @@ video {
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
+}
+
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .my-5 {
@@ -721,10 +718,6 @@ video {
   }
 }
 
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -763,10 +756,6 @@ video {
 
 .justify-items-center {
   justify-items: center;
-}
-
-.gap-2 {
-  gap: 0.5rem;
 }
 
 .gap-y-5 {
@@ -867,9 +856,18 @@ video {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.font-medium {
+  font-weight: 500;
 }
 
 .font-semibold {
@@ -1031,18 +1029,78 @@ html{
 /* ------------------------- HOME STYLES START ------------------ */
 
 .home-dragon{
-  height: 35vh;
+  height: 20vh;
 }
 
 .home-main{
   height: calc(100vh - 140px);
 }
 
+.home-main__grid{
+  display: grid;
+  grid-gap: 1rem;
+  grid-template: repeat(4, 20%) / calc(60% - 0.5rem) calc(40% - 0.5rem);
+  grid-template-areas: "title img"
+                       "info img"
+                       "info img"
+                       "button img";
+}
+
+.home-main__grid div{
+  grid-column: 1 / span 2;
+}
+
+.home-main__img{
+  grid-row-start: 1;
+}
+
 .button{
+  display: flex;
+  justify-content: center;
+  width: 100%;
   max-width: 480px;
 }
 
 /* ------------------------- HOME STYLES END ------------------ */
+
+/* ----------------------LANDSCAPE MEDIA QUERY START -------------------- */
+
+@media (min-width: 475px) {
+  /* ------------------------- HOME STYLES START ------------------ */
+
+  .home-dragon{
+    height: 35vh;
+  }
+
+  .home-main__grid{
+    grid-gap: normal;
+  }
+
+  .home-main__grid div{
+    grid-column: auto / span 1;
+  }
+
+  .home-main__title{
+    grid-area: title;
+  }
+
+  .home-main__info{
+    grid-area: info;
+  }
+
+  .home-main__button{
+    grid-area: button;
+  }
+
+  .home-main__img{
+    grid-column-start: 2;
+    grid-area: img;
+  }
+
+  /* ------------------------- HOME STYLES END ------------------ */
+}
+
+/* -------------------LANDSCAPE MEDIA QUERY END------------------------- */
 
 /* ----------------------TABLET MEDIA QUERY START -------------------- */
 
@@ -1076,6 +1134,16 @@ html{
 
 /* -------------------PC MEDIA QUERY END------------------------- */
 
+@media (min-width: 475px) {
+  .xs\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .xs\:row-span-2 {
+    grid-row: span 2 / span 2;
+  }
+}
+
 @media (min-width: 640px) {
 }
 
@@ -1086,10 +1154,6 @@ html{
 
   .md\:row-span-1 {
     grid-row: span 1 / span 1;
-  }
-
-  .md\:row-span-2 {
-    grid-row: span 2 / span 2;
   }
 
   .md\:row-start-2 {
@@ -1134,28 +1198,8 @@ html{
     grid-column: span 2 / span 2;
   }
 
-  .lg\:col-start-2 {
-    grid-column-start: 2;
-  }
-
-  .lg\:row-span-2 {
-    grid-row: span 2 / span 2;
-  }
-
   .lg\:row-span-4 {
     grid-row: span 4 / span 4;
-  }
-
-  .lg\:row-span-5 {
-    grid-row: span 5 / span 5;
-  }
-
-  .lg\:row-start-3 {
-    grid-row-start: 3;
-  }
-
-  .lg\:row-start-5 {
-    grid-row-start: 5;
   }
 
   .lg\:flex {
@@ -1176,10 +1220,6 @@ html{
 
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .lg\:grid-rows-5 {
-    grid-template-rows: repeat(5, minmax(0, 1fr));
   }
 
   .lg\:flex-row {
