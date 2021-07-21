@@ -563,6 +563,10 @@ video {
   margin: 0.5rem;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -625,6 +629,10 @@ video {
   height: 3.5rem;
 }
 
+.h-40 {
+  height: 10rem;
+}
+
 .h-auto {
   height: auto;
 }
@@ -639,6 +647,10 @@ video {
 
 .w-14 {
   width: 3.5rem;
+}
+
+.w-40 {
+  width: 10rem;
 }
 
 .w-2\/3 {
@@ -756,6 +768,10 @@ video {
   flex-direction: column;
 }
 
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -782,6 +798,10 @@ video {
 
 .gap-y-5 {
   row-gap: 1.25rem;
+}
+
+.self-start {
+  align-self: flex-start;
 }
 
 .overflow-x-hidden {
@@ -818,6 +838,11 @@ video {
 .bg-red-main {
   --tw-bg-opacity: 1;
   background-color: rgba(231, 6, 43, var(--tw-bg-opacity));
+}
+
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
 }
 
 .bg-purple-main {
@@ -946,6 +971,16 @@ html{
   scroll-behavior: smooth;
 }
 
+main{
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  max-width: 1920px;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
 .show{
   display: flex;
 }
@@ -1024,12 +1059,14 @@ html{
 
 .contact-me{
   transition: all 0.5s ease;
+  box-shadow: inset 0px -10px 10px -10px var(--purple-main);
 }
 
 .contact-me:hover{
   transform: scale(1.05);
   color: var(--red-main);
-  border: 1px solid var(--purple-main)
+  border: 1px solid var(--purple-main);
+  box-shadow: 0px 10px 10px -10px var(--purple-main);
 }
 
 /* --------------------------HEADER STYLES END------------------------- */
@@ -1058,8 +1095,12 @@ html{
 
 /* ------------------------- HOME STYLES START ------------------ */
 
+.home-main-container{
+  max-height: 440px;
+}
+
 .home-dragon{
-  height: 20vh;
+  width: 40%;
 }
 
 .home-main{
@@ -1087,8 +1128,17 @@ html{
 .button{
   display: flex;
   justify-content: center;
+  transition: all 0.5s ease;
   width: 100%;
   max-width: 480px;
+}
+
+.button:hover{
+  transform: scale(1.05);
+}
+
+.button-content{
+  box-shadow: inset 0px -10px 10px -10px var(--purple-main);
 }
 
 .card{
@@ -1105,7 +1155,7 @@ html{
   /* ------------------------- HOME STYLES START ------------------ */
 
   .home-dragon{
-    height: 35vh;
+    width: 25vw;
   }
 
   .home-main__grid{
@@ -1162,7 +1212,7 @@ html{
   /* ------------------------- HOME STYLES START ------------------ */
 
   .home-dragon{
-    height: 45vh;
+    width: 75%;
   }
 
   /* ------------------------- HOME STYLES END ------------------ */
@@ -1244,8 +1294,8 @@ html{
     grid-column: span 1 / span 1;
   }
 
-  .lg\:col-span-2 {
-    grid-column: span 2 / span 2;
+  .lg\:col-span-3 {
+    grid-column: span 3 / span 3;
   }
 
   .lg\:row-span-2 {
@@ -1276,8 +1326,8 @@ html{
     width: auto;
   }
 
-  .lg\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:flex-row {
