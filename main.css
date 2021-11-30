@@ -957,6 +957,11 @@ video {
   line-height: 2rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
@@ -1008,6 +1013,10 @@ video {
   font-family: 'styleScript';
 
   src: url(/55b25fe3624164420924.ttf);
+}
+
+a[aria-current] {
+  border-bottom: 1px solid var(--purple-main);
 }
 
 :root{
@@ -1259,6 +1268,15 @@ main{
 }
 
 /* ------------------------- FAQ STYLES START ------------------ */
+
+/* ------------------------- CONTACT STYLES START ------------------ */
+
+.contact {
+  width: 80px;
+  height: 80px;
+}
+
+/* ------------------------- CONTACT STYLES START ------------------ */
 
 /* ----------------------LANDSCAPE MEDIA QUERY START -------------------- */
 
