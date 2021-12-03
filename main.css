@@ -543,6 +543,10 @@ video {
   right: -1.5rem;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .bottom-8 {
   bottom: 2rem;
 }
@@ -581,6 +585,10 @@ video {
 
 .m-5 {
   margin: 1.25rem;
+}
+
+.m-auto {
+  margin: auto;
 }
 
 .mx-2 {
@@ -665,6 +673,10 @@ video {
 
 .h-auto {
   height: auto;
+}
+
+.h-3\/5 {
+  height: 60%;
 }
 
 .h-4\/5 {
@@ -1062,7 +1074,6 @@ html{
   color: var(--purple-main);
   background-color: var(--platinum);
   font-family: serif;
-  scroll-behavior: smooth;
 }
 
 main{
