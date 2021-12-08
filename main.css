@@ -830,6 +830,10 @@ video {
   list-style-type: disc;
 }
 
+.list-decimal {
+  list-style-type: decimal;
+}
+
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -1249,6 +1253,7 @@ main{
 
 .home-main{
   height: calc(100vh - 140px);
+  min-height: 250px;
 }
 
 .home-main__grid{
