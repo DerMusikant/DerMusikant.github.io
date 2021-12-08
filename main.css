@@ -659,6 +659,10 @@ video {
   display: none;
 }
 
+.h-1 {
+  height: 0.25rem;
+}
+
 .h-10 {
   height: 2.5rem;
 }
@@ -675,12 +679,24 @@ video {
   height: auto;
 }
 
-.h-3\/5 {
-  height: 60%;
+.h-1\/2 {
+  height: 50%;
 }
 
 .h-4\/5 {
   height: 80%;
+}
+
+.h-4\/6 {
+  height: 66.666667%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-1 {
+  width: 0.25rem;
 }
 
 .w-10 {
@@ -709,6 +725,10 @@ video {
 
 .w-4\/5 {
   width: 80%;
+}
+
+.w-11\/12 {
+  width: 91.666667%;
 }
 
 .w-full {
@@ -802,6 +822,14 @@ video {
   cursor: pointer;
 }
 
+.list-inside {
+  list-style-position: inside;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -854,12 +882,12 @@ video {
   overflow-x: hidden;
 }
 
-.rounded-xl {
-  border-radius: 0.75rem;
+.rounded {
+  border-radius: 0.25rem;
 }
 
-.rounded-3xl {
-  border-radius: 1.5rem;
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .rounded-full {
@@ -1015,12 +1043,13 @@ video {
   font-weight: 800;
 }
 
-.underline {
-  text-decoration: underline;
-}
-
 *, ::before, ::after {
   --tw-shadow: 0 0 #0000;
+}
+
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-2xl {
@@ -1045,14 +1074,16 @@ video {
   transition-duration: 150ms;
 }
 
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 @font-face {
   font-family: 'styleScript';
 
   src: url(/55b25fe3624164420924.ttf);
-}
-
-a[aria-current] {
-  border-bottom: 1px solid var(--purple-main);
 }
 
 :root{
@@ -1171,6 +1202,7 @@ main{
 
 .contact-me{
   transition: all 0.5s ease;
+  border: 1px solid transparent;
   box-shadow: inset 0px -10px 10px -10px var(--purple-main);
 }
 
@@ -1283,12 +1315,43 @@ main{
 
 .card{
   box-shadow: 5px 10px 20px -10px var(--purple-main);
-  border-radius: 1rem;
 }
 
 /* ------------------------- HOME STYLES END ------------------ */
 
+/* ------------------------- ABOUT STYLES START ------------------ */
+
+.desktop{
+  top: 5.5%;
+}
+
+.mobile{
+  top: 4%;
+  left: 14%;
+}
+
+/* ------------------------- ABOUT STYLES END ------------------ */
+
 /* ------------------------- FAQ STYLES START ------------------ */
+
+.question-item:active{
+  transform: scale(0.9);
+}
+
+.question:hover::after{
+  width:100%;
+  left:0;
+}
+
+.question::after{
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  background: var(--red-main);
+  transition: width .3s ease 0s,left .3s ease 0s;
+  width: 0;
+}
 
 .questions--list{
   display: flex;
@@ -1375,15 +1438,6 @@ main{
   }
 
   /* ----------------------------- HEADER STYLES END -------------------------- */
-
-  /* ----------------------------- FAQ STYLES START -------------------------- */
-
-  .questions--list{
-    top: 0;
-    align-self: start;
-  }
-
-  /* ----------------------------- FAQ STYLES END -------------------------- */
 }
 
 /* -------------------TABLET MEDIA QUERY END------------------------- */
@@ -1391,6 +1445,10 @@ main{
 /* -------------------PC MEDIA QUERY START------------------------- */
 
 @media (min-width: 1024px) {
+  a[aria-current] {
+    border-bottom: 1px solid var(--purple-main);
+  }
+
   /* ------------------------- HOME STYLES START ------------------ */
 
   .home-dragon{
