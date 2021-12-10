@@ -818,6 +818,11 @@ video {
   }
 }
 
+.animate-bounce {
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -1103,6 +1108,10 @@ video {
 
 .loading{
   height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 html{
@@ -1117,6 +1126,7 @@ main{
   flex-direction: column;
   max-width: 1920px;
   align-items: center;
+  justify-content: center;
   overflow-x: hidden;
 }
 
@@ -1253,7 +1263,7 @@ main{
 
 .home-main{
   height: calc(100vh - 140px);
-  min-height: 250px;
+  min-height: 515px;
 }
 
 .home-main__grid{
@@ -1328,11 +1338,16 @@ main{
 
 .desktop{
   top: 5.5%;
+  width: 95%;
+  border-radius: 5px;
 }
 
 .mobile{
   top: 4%;
-  left: 14%;
+  left: 13.5%;
+  border-radius: 5px;
+  height: 75%;
+  width: 56%;
 }
 
 /* ------------------------- ABOUT STYLES END ------------------ */
@@ -1388,6 +1403,10 @@ main{
 
   .home-dragon{
     width: 25vw;
+  }
+
+  .home-main{
+    min-height: 250px;
   }
 
   .home-main__grid{
